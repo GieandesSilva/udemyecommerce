@@ -70,8 +70,26 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+    
+                    @if ($errors->any())
+                        <div class="panel">
+                            <ul class="list-group text-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li class="list-group-item">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
         @yield('content')
+
+    </div>
+
     </div>
 
     <!-- Scripts -->
