@@ -51,10 +51,10 @@
                         @else
                             <ul class="nav navbar-nav">
                                 <li class="nav-item pull-left">
-                                    <a class="nav-link" href="#">Products</a>
+                                    <a class="nav-link" href="{{ route('products.index') }}">Products</a>
                                 </li>
                                 <li class="nav-item justify-content-left">
-                                    <a class="nav-link" href="#">New Product</a>
+                                    <a class="nav-link" href="{{ route('products.create') }}">New Product</a>
                                 </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
