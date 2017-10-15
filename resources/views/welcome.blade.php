@@ -77,10 +77,8 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    E-commerce
-                </div>
+            <div class="content text-center">
+                <h1> E-commerce </h1>
             </div>
         </div>
     </body>
