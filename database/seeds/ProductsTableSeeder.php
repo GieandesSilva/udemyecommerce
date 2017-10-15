@@ -13,7 +13,10 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
+        factory(\App\Product::class, 30)->create();
+        
+        /*
 
         $p1 = [
 
@@ -63,5 +66,7 @@ class ProductsTableSeeder extends Seeder
         Product::create($p2);
         Product::create($p3);
         Product::create($p4);
+
+        */
     }
 }

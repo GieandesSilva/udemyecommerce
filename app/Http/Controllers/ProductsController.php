@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Pagination\Paginator;
+
 use App\Product;
 
 use Session;
@@ -25,7 +27,9 @@ class ProductsController extends Controller
     public function index()
     {
         //
-        return view('products.index', ['products' => Product::all()]);
+        $products = Product::orderBy('created_at', 'desc')->paginate(5);
+
+        return view('products.index', ['products' => $products ]);
     }
 
     /**

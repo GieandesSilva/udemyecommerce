@@ -7,8 +7,8 @@
 
         <div class="panel-body">
                     
-            <table class="table table-hover">
-                <thead>
+            <table class="table table-striped">
+                <thead class="thead-inverse">
                     <tr>
                         <th>Featured</th>
                         <th>Name</th>
@@ -21,7 +21,7 @@
                     @foreach($products as $product)
                         <tr>
                             <td>
-                                <img src="{{ $product->image }}" alt="{{ $product->name }}" style="width:80px;">
+                                <img src="{{ $product->image }}" alt="{{ $product->name }}" style="width:50px;">
                             </td>
                             <td> {{ $product->name }}</td>
                             <td> {{ $product->price }}</td>
@@ -40,8 +40,10 @@
                         </tr>
                     @endforeach
                 </tbody>
-            
             </table>
+            <div class="text-center">
+                {{ $products->links() }}                        
+            </div>
 
         </div>
     </div>
