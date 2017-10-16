@@ -20,4 +20,13 @@ class FrontEndController extends Controller
 
         return view('index', ['products' => $produtos]);
     }
+
+    public function single($id)
+
+    {
+
+        $product = Product::find($id);
+
+        return view('single', ['product' => $product ]);
+    }
 }
