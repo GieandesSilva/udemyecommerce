@@ -34,7 +34,7 @@
                                 <tr class="cart_item">
 
                                     <td class="product-remove">
-                                        <a href="#" class="product-del remove" title="Remove this item">
+                                        <a href="{{ route('cart.delete',['id' => $product->rowId]) }}" class="product-del remove" title="Remove this item">
                                             <i class="seoicon-delete-bold"></i>
                                         </a>
                                     </td>
@@ -59,9 +59,9 @@
                                     <td class="product-quantity">
 
                                         <div class="quantity">
-                                            <a href="#" class="quantity-minus">-</a>
+                                            <a href="{{ route('cart.decr',['id' => $product->rowId, 'qty' => $product->qty ]) }}" class="quantity-minus">-</a>
                                             <input title="Qty" class="email input-text qty text" type="text" value="{{ $product->qty }}" placeholder="8" readonly>
-                                            <a href="#" class="quantity-plus">+</a>
+                                            <a href="{{ route('cart.incr',['id' => $product->rowId, 'qty' => $product->qty ]) }}" class="quantity-plus">+</a>
                                         </div>
 
                                     </td>
@@ -101,7 +101,7 @@
 
                     <div class="cart-total">
                         <h3 class="cart-total-title">Cart Totals</h3>
-                        <h5 class="cart-total-total">Total: <span class="price">$100.97</span></h5>
+                        <h5 class="cart-total-total">Total: <span class="price">${{ Cart::total() }}</span></h5>
                         <a href="20_checkout.html" class="btn btn-medium btn--light-green btn-hover-shadow">
                             <span class="text">Checkout</span>
                             <span class="semicircle"></span>
