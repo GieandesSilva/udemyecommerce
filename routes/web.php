@@ -66,6 +66,13 @@ Route::get('/cart/checkout', [
 
     'as' => 'cart.checkout'
 ]);
+
+Route::post('/cart/add', [
+    
+    'uses' => 'ShoppingController@add_to_cart',
+
+    'as' => 'cart.add'
+]);
         
     
 Route::resource('/products', 'ProductsController');
