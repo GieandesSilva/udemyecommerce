@@ -20,12 +20,12 @@
                             </div>
 
                             <div class="books-item-info">
-                                <a href="{{ route('product.single', ['id' => $product->id ]) }}"><h5 class="books-title">{{ $product->name }}</h5></a>
+                                <a href="{{ route('product.single', ['id' => $product->id]) }}"><h5 class="books-title">{{ $product->name }}</h5></a>
 
                                 <div class="books-price">{{ $product->price }}</div>
                             </div>
 
-                            <a href="19_cart.html" class="btn btn-small btn--dark add">
+                            <a href="{{ route('cart.rapid.add', ['id' => $product->id]) }}" class="btn btn-small btn--dark add">
                                 <span class="text">Add to Cart</span>
                                 <i class="seoicon-commerce"></i>
                             </a>
