@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('app/css/swiper.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('app/css/primary-menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('app/css/magnific-popup.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <!--Styles for RTL-->
 
@@ -72,7 +73,7 @@
         <div class="row pt120">
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="heading align-center mb60">
-                    <h4 class="h1 heading-title">Udemy E-commerce tutorial</h4>
+                    <a href="{{ route('index') }}"><h4 class="h1 heading-title">Udemy E-commerce tutorial</h4></a>
                     <p class="heading-text">Buy books, and we ship to you.
                     </p>
                 </div>
@@ -109,6 +110,24 @@
 <script src="{{ asset('app/js/velocity.min.js') }}"></script>
 <script src="{{ asset('app/js/ScrollMagic.min.js') }}"></script>
 <script src="{{ asset('app/js/animation.velocity.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+
+    @if(Session::has('success'))
+
+        toastr.success('{{ Session::get('success') }}');
+
+    @endif
+
+    @if(Session::has('info'))
+
+        toastr.info('{{ Session::get('info') }}');
+
+    @endif
+
+
+</script>
 
 <!-- ...end JS Script -->
 
