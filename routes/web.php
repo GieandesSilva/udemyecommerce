@@ -60,6 +60,13 @@ Route::get('/cart/rapid/add/{id}', [
     'as' => 'cart.rapid.add'
 ]);
 
+Route::post('/cart/add', [
+    
+    'uses' => 'ShoppingController@add_to_cart',
+
+    'as' => 'cart.add'
+]);
+    
 Route::get('/cart/checkout', [
 
     'uses' => 'CheckoutController@index',
@@ -67,13 +74,12 @@ Route::get('/cart/checkout', [
     'as' => 'cart.checkout'
 ]);
 
-Route::post('/cart/add', [
-    
-    'uses' => 'ShoppingController@add_to_cart',
+Route::post('/cart/checkout', [
 
-    'as' => 'cart.add'
+    'uses' =>  'CheckoutController@pay',
+
+    'as' => 'cart.checkout'
 ]);
-        
     
 Route::resource('/products', 'ProductsController');
 
